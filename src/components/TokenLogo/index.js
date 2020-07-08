@@ -4,6 +4,7 @@ import { isAddress } from '../../utils'
 
 import { ReactComponent as DaiLogo } from '../../assets/images/Mark_Dai.svg'
 import { ReactComponent as HoneyLogo } from '../../assets/images/Honey.svg'
+import XMoonLogo from '../../assets/images/moon.png'
 
 const TOKEN_ICON_API = address =>
   `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${isAddress(
@@ -44,6 +45,10 @@ export default function TokenLogo({ address, size = '1rem', ...rest }) {
     return <StyledDaiLogo size={size} />
   } else if (address === '0x71850b7E9Ee3f13Ab46d67167341E4bDc905Eef9') {
     return <StyledHoneyLogo size={size} />
+  } else if (address === "0x1e16aa4Df73d29C029d94CeDa3e3114EC191E25A") {
+    return (
+      <img src={XMoonLogo} style={{ width: size, height: size }} alt="xMoon" />
+    );
   } else if (!error && !BAD_IMAGES[address]) {
     path = TOKEN_ICON_API(address.toLowerCase())
   } else {
