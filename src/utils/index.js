@@ -6,6 +6,7 @@ import ERC20_ABI from '../constants/abis/erc20'
 import ERC20_BYTES32_ABI from '../constants/abis/erc20_bytes32'
 import { FACTORY_ADDRESSES, SUPPORTED_THEMES } from '../constants'
 import { formatFixed } from '@uniswap/sdk'
+import { explorerLinks } from 'eth-net-props'
 
 import UncheckedJsonRpcSigner from './signer'
 
@@ -44,6 +45,18 @@ export function getEtherscanLink(networkId, data, type) {
     case 'address':
     default: {
       return `${prefix}/address/${data}`
+    }
+  }
+}
+
+export function getBlockscoutLink(networkId, data, type) {
+  switch (type) {
+    case 'transaction': {
+      return explorerLinks.getExplorerTxLinkFor(data, networkId)
+    }
+    case 'address':
+    default: {
+      return explorerLinks.getExplorerAccountLinkFor(data, networkId)
     }
   }
 }

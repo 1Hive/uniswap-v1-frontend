@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 import { useWeb3React } from '../../hooks'
 import { useTokenDetails } from '../../contexts/Tokens'
-import { getEtherscanLink } from '../../utils'
+import { getBlockscoutLink } from '../../utils'
 
 import { Link } from '../../theme'
 import TokenLogo from '../TokenLogo'
@@ -166,8 +166,8 @@ function WarningCard({ onDismiss, urlAddedTokens, currency }) {
       <Row>
         <TokenLogo address={currency} />
         <div style={{ fontWeight: 500 }}>{inputName && inputSymbol ? inputName + ' (' + inputSymbol + ')' : ''}</div>
-        <Link style={{ fontWeight: 400 }} href={getEtherscanLink(chainId, currency, 'address')}>
-          (View on Etherscan)
+        <Link style={{ fontWeight: 400 }} href={getBlockscoutLink(chainId, currency, 'address')}>
+          (View on Blockscout)
         </Link>
       </Row>
       <Row style={{ fontSize: '12px', fontStyle: 'italic' }}>
