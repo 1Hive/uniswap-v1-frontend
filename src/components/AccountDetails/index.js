@@ -6,7 +6,7 @@ import Copy from './Copy'
 import Transaction from './Transaction'
 import { SUPPORTED_WALLETS } from '../../constants'
 import { ReactComponent as Close } from '../../assets/images/x.svg'
-import { getEtherscanLink } from '../../utils'
+import { getBlockscoutLink } from '../../utils'
 import { injected, walletconnect, walletlink, fortmatic, portis, torus } from '../../connectors'
 import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
 import WalletConnectIcon from '../../assets/images/walletConnectIcon.svg'
@@ -338,14 +338,14 @@ export default function AccountDetails({
               <AccountGroupingRow>
                 {ENSName ? (
                   <AccountControl hasENS={!!ENSName} isENS={true}>
-                    <StyledLink hasENS={!!ENSName} isENS={true} href={getEtherscanLink(chainId, ENSName, 'address')}>
+                    <StyledLink hasENS={!!ENSName} isENS={true} href={getBlockscoutLink(chainId, ENSName, 'address')}>
                       {ENSName} ↗{' '}
                     </StyledLink>
                     <Copy toCopy={ENSName} />
                   </AccountControl>
                 ) : (
                   <AccountControl hasENS={!!ENSName} isENS={false}>
-                    <StyledLink hasENS={!!ENSName} isENS={false} href={getEtherscanLink(chainId, account, 'address')}>
+                    <StyledLink hasENS={!!ENSName} isENS={false} href={getBlockscoutLink(chainId, account, 'address')}>
                       {account} ↗{' '}
                     </StyledLink>
                     <Copy toCopy={account} />
