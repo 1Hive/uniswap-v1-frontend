@@ -6,7 +6,7 @@ import { ReactComponent as DaiLogo } from '../../assets/images/Mark_Dai.svg'
 import { ReactComponent as HoneyLogo } from '../../assets/images/Honey.svg'
 
 const TOKEN_ICON_API = address =>
-  `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${isAddress(
+  `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/xdai/assets/${isAddress(
     address
   )}/logo.png`
 const BAD_IMAGES = {}
