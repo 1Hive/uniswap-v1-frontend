@@ -47,7 +47,7 @@
     "typescript": "^3.8.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_CHAIN_ID=100 REACT_APP_NETWORK_URL=https://xdai.poanetwork.dev react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
